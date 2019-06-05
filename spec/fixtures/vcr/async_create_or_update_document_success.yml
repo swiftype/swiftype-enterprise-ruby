@@ -5,8 +5,8 @@ http_interactions:
     uri: http://localhost:3002/api/v1/ent/sources/59542d332139de0acacc7dd4/documents/bulk_create.json
     body:
       encoding: UTF-8
-      string: '[{"external_id":"INscMGmhmX4","url":"http://www.youtube.com/watch?v=v1uyQZNg2vE","title":"The
-        Original Grumpy Cat","body":"this is a test"},{"external_id":"JNDFojsd02","url":"http://www.youtube.com/watch?v=tsdfhk2j","title":"Another
+      string: '[{"id":"INscMGmhmX4","url":"http://www.youtube.com/watch?v=v1uyQZNg2vE","title":"The
+        Original Grumpy Cat","body":"this is a test"},{"id":"JNDFojsd02","url":"http://www.youtube.com/watch?v=tsdfhk2j","title":"Another
         Grumpy Cat","body":"this is also a test"}]'
     headers:
       Accept-Encoding:
@@ -47,7 +47,7 @@ http_interactions:
       - thin 1.5.0 codename Knife
     body:
       encoding: UTF-8
-      string: '[{"id":null,"external_id":"1234","errors":[]},{"id":null,"external_id":"1235","errors":[]}]'
+      string: '[{"id":null,"id":"1234","errors":[]},{"id":null,"id":"1235","errors":[]}]'
     http_version:
   recorded_at: Wed, 05 Jul 2017 17:52:09 GMT
 recorded_with: VCR 3.0.3

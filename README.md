@@ -38,13 +38,13 @@ This example shows how to use the index_documents method:
     content_source_key = '' # your content source key
     documents = [
       {
-        'external_id' => 'INscMGmhmX4',
+        'id' => 'INscMGmhmX4',
         'url' => 'http://www.youtube.com/watch?v=v1uyQZNg2vE',
         'title' => 'The Original Grumpy Cat',
         'body' => 'this is a test'
       },
       {
-        'external_id' => 'JNDFojsd02',
+        'id' => 'JNDFojsd02',
         'url' => 'http://www.youtube.com/watch?v=tsdfhk2j',
         'title' => 'Another Grumpy Cat',
         'body' => 'this is also a test'
@@ -61,10 +61,10 @@ This example shows how to use the index_documents method:
 ### Destroying Documents
 
     content_source_key = '' # your content source key
-    document_external_ids = ['INscMGmhmX4', 'JNDFojsd02']
+    document_ids = ['INscMGmhmX4', 'JNDFojsd02']
 
     begin
-      destroy_document_results = swiftype.destroy_documents(content_source_key, document_external_ids)
+      destroy_document_results = swiftype.destroy_documents(content_source_key, document_ids)
       # handle destroy document results
     rescue SwiftypeEnterprise::ClientException => e
       # handle error

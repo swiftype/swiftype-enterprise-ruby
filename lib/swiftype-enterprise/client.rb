@@ -42,7 +42,7 @@ module SwiftypeEnterprise
     # For more information on indexing documents, see the {Content Source documentation}[https://app.swiftype.com/ent/docs/custom_sources].
     module ContentSourceDocuments
       REQUIRED_TOP_LEVEL_KEYS = [
-        'external_id',
+        'id',
         'url',
         'title',
         'body'
