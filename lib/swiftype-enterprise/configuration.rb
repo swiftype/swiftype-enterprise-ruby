@@ -3,7 +3,7 @@ require 'swiftype-enterprise/version'
 
 module SwiftypeEnterprise
   module Configuration
-    DEFAULT_ENDPOINT = "https://api.swiftype.com/api/v1/"
+    DEFAULT_ENDPOINT = "http://localhost:3002/api/v1/"
     DEFAULT_USER_AGENT = "swiftype-enterprise-ruby/#{SwiftypeEnterprise::VERSION}"
 
     VALID_OPTIONS_KEYS = [
