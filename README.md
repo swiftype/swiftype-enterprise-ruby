@@ -31,6 +31,14 @@ Create a new instance of the Swiftype Enterprise Client with your access token:
     SwiftypeEnterprise.access_token = '' # your access token
     swiftype = SwiftypeEnterprise::Client.new
 
+### Change API endpoint
+
+ ```
+swiftype = SwiftypeEnterprise::Client.new
+SwiftypeEnterprise.endpoint = 'https://your-server.example.com/api/v1'
+```
+
+
 ### Indexing Documents
 
 This example shows how to use the index_documents method:
