@@ -41,18 +41,6 @@ module SwiftypeEnterprise
     #
     # For more information on indexing documents, see the {Content Source documentation}[https://app.swiftype.com/ent/docs/custom_sources].
     module ContentSourceDocuments
-      REQUIRED_TOP_LEVEL_KEYS = [
-        'id',
-        'url',
-        'title',
-        'body'
-      ].map!(&:freeze).to_set.freeze
-      OPTIONAL_TOP_LEVEL_KEYS = [
-        'created_at',
-        'updated_at',
-        'type',
-      ].map!(&:freeze).to_set.freeze
-      CORE_TOP_LEVEL_KEYS = (REQUIRED_TOP_LEVEL_KEYS + OPTIONAL_TOP_LEVEL_KEYS).freeze
 
       # Index a batch of documents using the {Content Source API}[https://app.swiftype.com/ent/docs/custom_sources].
       #
@@ -64,7 +52,7 @@ module SwiftypeEnterprise
       # @raise [SwiftypeEnterprise::InvalidDocument] when a single document is missing required fields or contains unsupported fields
       # @raise [Timeout::Error] when timeout expires waiting for results
       def index_documents(content_source_key, documents)
-        documents = Array(documents).map! { |document| validate_and_normalize_document(document) }
+        documents = Array(documents).map! { |document| normalize_document(document) }
 
         async_create_or_update_documents(content_source_key, documents)
       end
@@ -87,16 +75,8 @@ module SwiftypeEnterprise
         post("ent/sources/#{content_source_key}/documents/bulk_create.json", documents)
       end
 
-      def validate_and_normalize_document(document)
-        document = Utils.stringify_keys(document)
-        document_keys = document.keys.to_set
-        missing_keys = REQUIRED_TOP_LEVEL_KEYS - document_keys
-        raise SwiftypeEnterprise::InvalidDocument.new("missing required fields (#{missing_keys.to_a.join(', ')})") if missing_keys.any?
-
-        surplus_keys = document_keys - CORE_TOP_LEVEL_KEYS
-        raise SwiftypeEnterprise::InvalidDocument.new("unsupported fields supplied (#{surplus_keys.to_a.join(', ')}), supported fields are (#{CORE_TOP_LEVEL_KEYS.to_a.join(', ')})") if surplus_keys.any?
-
-        document
+      def normalize_document(document)
+        Utils.stringify_keys(document)
       end
     end
 
