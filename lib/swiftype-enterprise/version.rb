@@ -1,3 +1,3 @@
 module SwiftypeEnterprise
-  VERSION = '7.2.0-beta.2'
+  VERSION = '3.0.0'
 end
