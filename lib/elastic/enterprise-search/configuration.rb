@@ -5,7 +5,6 @@ module Elastic
   module EnterpriseSearch
     module Configuration
       DEFAULT_ENDPOINT = "http://localhost:3002/api/v1/"
-      DEFAULT_USER_AGENT = "swiftype-enterprise-ruby/#{Elastic::EnterpriseSearch::VERSION}"
 
       VALID_OPTIONS_KEYS = [
         :access_token,
@@ -23,7 +22,7 @@ module Elastic
       def reset
         self.access_token = nil
         self.endpoint = DEFAULT_ENDPOINT
-        self.user_agent = DEFAULT_USER_AGENT
+        self.user_agent = nil
         self
       end
 

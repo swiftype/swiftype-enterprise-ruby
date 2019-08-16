@@ -28,55 +28,66 @@ Or place `gem 'elastic-enterprise-search', '~> 0.1.` in your `Gemfile` and run `
 
 Create a new instance of the Enterprise Search Client with your access token:
 
-    Elastic::EnterpriseSearch.access_token = '' # your access token
-    client = Elastic::EnterpriseSearch::Client.new
+```ruby
+Elastic::EnterpriseSearch.access_token = '' # your access token
+client = Elastic::EnterpriseSearch::Client.new
+```
 
 ### Change API endpoint
 
- ```
+```ruby
 client = Elastic::EnterpriseSearch::Client.new
 Elastic::EnterpriseSearch.endpoint = 'https://your-server.example.com/api/v1'
 ```
 
+### Specifying an HTTP Proxy
+
+```ruby
+client = Elastic::EnterpriseSearch::Client.new(:proxy => 'http://localhost:8888')
+```
 
 ### Indexing Documents
 
 This example shows how to use the index_documents method:
 
-    content_source_key = '' # your content source key
-    documents = [
-      {
-        'id' => 'INscMGmhmX4',
-        'url' => 'http://www.youtube.com/watch?v=v1uyQZNg2vE',
-        'title' => 'The Original Grumpy Cat',
-        'body' => 'this is a test'
-      },
-      {
-        'id' => 'JNDFojsd02',
-        'url' => 'http://www.youtube.com/watch?v=tsdfhk2j',
-        'title' => 'Another Grumpy Cat',
-        'body' => 'this is also a test'
-      }
-    ]
+```ruby
+content_source_key = '' # your content source key
+documents = [
+  {
+    'id' => 'INscMGmhmX4',
+    'url' => 'http://www.youtube.com/watch?v=v1uyQZNg2vE',
+    'title' => 'The Original Grumpy Cat',
+    'body' => 'this is a test'
+  },
+  {
+    'id' => 'JNDFojsd02',
+    'url' => 'http://www.youtube.com/watch?v=tsdfhk2j',
+    'title' => 'Another Grumpy Cat',
+    'body' => 'this is also a test'
+  }
+]
 
-    begin
-      document_receipts = client.index_documents(content_source_key, documents)
-      # handle results
-    rescue Elastic::EnterpriseSearch::ClientException => e
-      # handle error
-    end
+begin
+  document_receipts = client.index_documents(content_source_key, documents)
+  # handle results
+rescue Elastic::EnterpriseSearch::ClientException => e
+  # handle error
+end
+```
 
 ### Destroying Documents
 
-    content_source_key = '' # your content source key
-    document_ids = ['INscMGmhmX4', 'JNDFojsd02']
+```ruby
+content_source_key = '' # your content source key
+document_ids = ['INscMGmhmX4', 'JNDFojsd02']
 
-    begin
-      destroy_document_results = client.destroy_documents(content_source_key, document_ids)
-      # handle destroy document results
-    rescue Elastic::EnterpriseSearch::ClientException => e
-      # handle error
-    end
+begin
+  destroy_document_results = client.destroy_documents(content_source_key, document_ids)
+  # handle destroy document results
+rescue Elastic::EnterpriseSearch::ClientException => e
+  # handle error
+end
+```
 
 ## Running tests
 

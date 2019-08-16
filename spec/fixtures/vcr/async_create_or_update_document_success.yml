@@ -13,8 +13,6 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - SwiftypeEnterprise-Ruby/1.0.0
       Content-Type:
       - application/json
       Authorization:

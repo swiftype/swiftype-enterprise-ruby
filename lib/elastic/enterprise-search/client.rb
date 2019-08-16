@@ -22,6 +22,7 @@ module Elastic
       # @option options [Numeric] :overall_timeout overall timeout for requests in seconds (default: 15s)
       # @option options [Numeric] :open_timeout the number of seconds Net::HTTP (default: 15s)
       #   will wait while opening a connection before raising a Timeout::Error
+      # @option options [String] :proxy url of proxy to use, ex: "http://localhost:8888"
       def initialize(options = {})
         @options = options
       end
@@ -32,6 +33,10 @@ module Elastic
 
       def open_timeout
         @options[:open_timeout] || DEFAULT_TIMEOUT
+      end
+
+      def proxy
+        @options[:proxy]
       end
 
       def overall_timeout

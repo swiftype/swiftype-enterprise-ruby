@@ -5,6 +5,9 @@ require 'openssl'
 
 module Elastic
   module EnterpriseSearch
+    CLIENT_NAME = 'elastic-enterprise-search-ruby'
+    CLIENT_VERSION = Elastic::EnterpriseSearch::VERSION
+
     module Request
       def get(path, params={})
         request(:get, path, params)
@@ -30,13 +33,23 @@ module Elastic
           uri = URI.parse("#{Elastic::EnterpriseSearch.endpoint}#{path}")
 
           request = build_request(method, uri, params)
-          http = Net::HTTP.new(uri.host, uri.port)
+
+          if proxy
+            proxy_parts = URI.parse(proxy)
+            http = Net::HTTP.new(uri.host, uri.port, proxy_parts.host, proxy_parts.port, proxy_parts.user, proxy_parts.password)
+          else
+            http = Net::HTTP.new(uri.host, uri.port)
+          end
+
           http.open_timeout = open_timeout
           http.read_timeout = overall_timeout
 
           if uri.scheme == 'https'
             http.use_ssl = true
-            http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+            # st_ssl_verify_none provides a means to disable SSL verification for debugging purposes. An example
+            # is Charles, which uses a self-signed certificate in order to inspect https traffic. This will
+            # not be part of this client's public API, this is more of a development enablement option
+            http.verify_mode = ENV['st_ssl_verify_none'] == 'true' ? OpenSSL::SSL::VERIFY_NONE : OpenSSL::SSL::VERIFY_PEER
             http.ca_file = File.join(File.dirname(__FILE__), '..', 'data', 'ca-bundle.crt')
             http.ssl_timeout = open_timeout
           end
@@ -86,9 +99,12 @@ module Elastic
           req.body = JSON.generate(params) unless params.length == 0
         end
 
-        req['User-Agent'] = Elastic::EnterpriseSearch.user_agent
+        req['User-Agent'] = Elastic::EnterpriseSearch.user_agent if Elastic::EnterpriseSearch.user_agent
         req['Content-Type'] = 'application/json'
+        req['X-Swiftype-Client'] = CLIENT_NAME
+        req['X-Swiftype-Client-Version'] = CLIENT_VERSION
         req['Authorization'] = "Bearer #{access_token}"
+        puts req
 
         req
       end
