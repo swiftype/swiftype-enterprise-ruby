@@ -3,7 +3,7 @@ require 'rspec'
 require 'webmock'
 require 'vcr'
 require 'awesome_print'
-require 'swiftype-enterprise'
+require 'elastic/enterprise-search'
 
 
 RSpec.configure do |config|
@@ -19,10 +19,10 @@ RSpec.configure do |config|
   end
 
   config.before :each do
-    SwiftypeEnterprise.endpoint = ENV["ENDPOINT"]
+    Elastic::EnterpriseSearch.endpoint = ENV["ENDPOINT"]
   end
 
   config.after :each do
-    SwiftypeEnterprise.reset
+    Elastic::EnterpriseSearch.reset
   end
 end

@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe SwiftypeEnterprise::Client do
-  let(:engine_slug) { 'swiftype-api-example' }
-  let(:client) { SwiftypeEnterprise::Client.new }
+describe Elastic::EnterpriseSearch::Client do
+  let(:engine_slug) { 'enterprise-search-api-example' }
+  let(:client) { Elastic::EnterpriseSearch::Client.new }
 
   before :each do
-    SwiftypeEnterprise.access_token = 'cGUN-vBokevBhhzyA669'
+    Elastic::EnterpriseSearch.access_token = 'cGUN-vBokevBhhzyA669'
   end
 
   context 'ContentSourceDocuments' do
