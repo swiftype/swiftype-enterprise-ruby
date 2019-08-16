@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/elastic/enterprise-search-ruby/blob/master/logo-enterprise-search.png?raw=true" alt="Elastic Enterprise Search Logo"></p>
 
-<a href="https://github.com/elastic/enterprise-search-ruby/releases"><img src="https://img.shields.io/github/release/elastic/enterprise-search-ruby/all.svg?style=flat-square" alt="GitHub release" /></a></p>
+<p align="center"><a href="https://circleci.com/gh/elastic/enterprise-search-ruby"><img src="https://circleci.com/gh/elastic/enterprise-search-ruby.svg?style=svg" alt="CircleCI build"></a></p>
 
 > A first-party Ruby client for [Elastic Enterprise Search](https://www.elastic.co/solutions/enterprise-search).
 
