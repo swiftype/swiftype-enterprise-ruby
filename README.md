@@ -22,7 +22,7 @@ To install the gem, execute:
 gem install elastic-enterprise-search
 ```
 
-Or place `gem 'elastic-enterprise-search', '~> 0.1.` in your `Gemfile` and run `bundle install`.
+Or place `gem 'elastic-enterprise-search', '~> 0.1.0` in your `Gemfile` and run `bundle install`.
 
 ## Usage
 
