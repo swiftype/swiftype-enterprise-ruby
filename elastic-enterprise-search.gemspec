@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Quin Hoxie"]
   s.email       = ["support@elastic.co"]
   s.homepage    = "https://github.com/elastic/enterprise-search-ruby"
-  s.summary     = %q{Official gem for accessing the Elastic Enterprise API}
-  s.description = %q{API client for accessing the Elastic Enterprise API with no dependencies.}
+  s.summary     = %q{Official gem for accessing the Elastic Enterprise Search API}
+  s.description = %q{API client for accessing the Elastic Enterprise Search API with no dependencies.}
   s.licenses    = ['Apache-2.0']
 
   s.files         = `git ls-files`.split("\n")

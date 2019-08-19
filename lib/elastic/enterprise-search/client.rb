@@ -5,7 +5,7 @@ require 'elastic/enterprise-search/utils'
 
 module Elastic
   module EnterpriseSearch
-    # API client for the {Elastic Enterprise API}[https://swiftype.com/enterprise-search].
+    # API client for the {Elastic Enterprise Search API}[https://swiftype.com/enterprise-search].
     class Client
       DEFAULT_TIMEOUT = 15
 
