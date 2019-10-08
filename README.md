@@ -46,7 +46,9 @@ Elastic::EnterpriseSearch.endpoint = 'https://your-server.example.com/api/v1'
 client = Elastic::EnterpriseSearch::Client.new(:proxy => 'http://localhost:8888')
 ```
 
-### Indexing Documents
+### Documents
+
+#### Indexing Documents
 
 This example shows how to use the index_documents method:
 
@@ -75,7 +77,7 @@ rescue Elastic::EnterpriseSearch::ClientException => e
 end
 ```
 
-### Destroying Documents
+#### Destroying Documents
 
 ```ruby
 content_source_key = '' # your content source key
@@ -87,6 +89,52 @@ begin
 rescue Elastic::EnterpriseSearch::ClientException => e
   # handle error
 end
+```
+
+### Permissions
+
+#### Listing all permissions
+
+```ruby
+content_source_key = '' # your content source key
+
+client.list_all_permissions(content_source_key)
+```
+
+#### Retrieve a User's permissions
+
+```ruby
+content_source_key = '' # your content source key
+user = 'enterprise_search'
+
+client.get_user_permissions(content_source_key, user)
+```
+
+#### Add permissions to a User
+```ruby
+content_source_key = '' # your content source key
+user = 'enterprise_search'
+permissions = ['permission1']
+
+client.add_user_permissions(content_source_key, user, permissions)
+```
+
+#### Update a User's permissions
+```ruby
+content_source_key = '' # your content source key
+user = 'enterprise_search'
+permissions = ['permission2']
+
+client.update_user_permissions(content_source_key, user, permissions)
+```
+
+#### Remove permissions from a User
+```ruby
+content_source_key = '' # your content source key
+user = 'enterprise_search'
+permissions = ['permission2']
+
+client.remove_user_permissions(content_source_key, user, permissions)
 ```
 
 ## Running tests
