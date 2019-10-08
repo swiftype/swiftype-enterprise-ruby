@@ -1,4 +1,4 @@
-# Content Source API - https://swiftype.com/documentation/enterprise-search/api/custom-sources
+# Document Permissions API - /documentation/enterprise-search/api/document-permissions
 module Elastic
   module EnterpriseSearch
     class Client
