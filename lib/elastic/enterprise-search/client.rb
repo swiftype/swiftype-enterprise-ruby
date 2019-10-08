@@ -8,6 +8,7 @@ module Elastic
     # API client for the {Elastic Enterprise Search API}[https://swiftype.com/enterprise-search].
     class Client
       autoload :ContentSourceDocuments, 'elastic/enterprise-search/client/content_source_documents.rb'
+      autoload :Permissions, 'elastic/enterprise-search/client/permissions.rb'
 
       DEFAULT_TIMEOUT = 15
 
@@ -46,6 +47,7 @@ module Elastic
       end
 
       include Elastic::EnterpriseSearch::Client::ContentSourceDocuments
+      include Elastic::EnterpriseSearch::Client::Permissions
     end
   end
 end
