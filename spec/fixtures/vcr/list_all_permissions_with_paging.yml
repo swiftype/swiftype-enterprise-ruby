@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/ent/sources/5d96387b75444bf49532c24a/permissions?page%5Bcurrent%5D=2&page%5Bsize%5D=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+      X-Swiftype-Client:
+      - elastic-enterprise-search-ruby
+      X-Swiftype-Client-Version:
+      - 0.2.1
+      Authorization:
+      - Bearer xyT3mm3ecPsPuYxd_6fX
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"701f9ddd65c2586e892ac7f10050825f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _st_frito_togo_session=ZXVYWkI5SFNTSm94Z29MY2thQTQvcmx4aStDenhUWkFWOVNyUWFCYWZaL3NJcDI2N21BcXJzK2h5dzNHNjd3NUdDYUNMYmgwYkNVczhjUmQ1dkd6Y2c9PS0tM3B5ciswcGlxek1QVXVjMUFsbFdPdz09--cea9576c7338c79cbd06216fe476cb63a9f6364f;
+        path=/; expires=Mon, 08 Oct 2029 17:58:09 -0000; HttpOnly
+      X-Request-Id:
+      - 1f924257-ed83-4715-a2f3-88be62d7d3c5
+      X-Runtime:
+      - '0.211862'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"page":{"current":2,"total_pages":1,"total_results":2,"size":5}},"results":[]}'
+    http_version: 
+  recorded_at: Tue, 08 Oct 2019 17:58:09 GMT
+recorded_with: VCR 3.0.3

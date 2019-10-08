@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3002/api/v1/ent/sources/5d96387b75444bf49532c24a/permissions/enterprise_search
+    body:
+      encoding: UTF-8
+      string: '{"permissions":["permission2"]}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+      X-Swiftype-Client:
+      - elastic-enterprise-search-ruby
+      X-Swiftype-Client-Version:
+      - 0.2.1
+      Authorization:
+      - Bearer xyT3mm3ecPsPuYxd_6fX
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d9b34b6591f5971aeb0f3d706560e171"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _st_frito_togo_session=VXFPc0pKQitCSkcvb2c4Wjl3ZEx2YXRTL1NXWW5KbHVwdHhIcEVpd3lJS3orVVM3eVV0UVo1bTJ5MGFxQXhMQjZCM3VOZmV3bDl5NHl1a3ZkV2UxOHc9PS0tc2Nma0NRR0FmcWs0S0tJdFBxUXF3UT09--97d427ee534c30c51d1770571623a1d361b61b6f;
+        path=/; expires=Mon, 08 Oct 2029 18:04:31 -0000; HttpOnly
+      X-Request-Id:
+      - 9404a936-7a58-4412-8ab8-e08f71a0380c
+      X-Runtime:
+      - '0.388014'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user":"enterprise_search","permissions":["permission2"]}'
+    http_version: 
+  recorded_at: Tue, 08 Oct 2019 18:04:31 GMT
+recorded_with: VCR 3.0.3
