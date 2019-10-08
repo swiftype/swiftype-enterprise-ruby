@@ -70,7 +70,7 @@ module Elastic
         when Net::HTTPNotFound
           raise Elastic::EnterpriseSearch::NonExistentRecord
         when Net::HTTPBadRequest
-          raise Elastic::EnterpriseSearch::BadRequest
+          raise Elastic::EnterpriseSearch::BadRequest, "#{response.code} #{response.body}"
         when Net::HTTPForbidden
           raise Elastic::EnterpriseSearch::Forbidden
         else
