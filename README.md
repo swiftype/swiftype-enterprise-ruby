@@ -101,6 +101,14 @@ content_source_key = '' # your content source key
 client.list_all_permissions(content_source_key)
 ```
 
+#### Listing all permissions with paging
+
+```ruby
+content_source_key = '' # your content source key
+
+client.list_all_permissions(content_source_key, :current => 2, :size => 40)
+```
+
 #### Retrieve a User's permissions
 
 ```ruby
