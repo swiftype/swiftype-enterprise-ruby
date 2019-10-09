@@ -106,7 +106,7 @@ client.list_all_permissions(content_source_key)
 ```ruby
 content_source_key = '' # your content source key
 
-client.list_all_permissions(content_source_key, :current => 2, :size => 40)
+client.list_all_permissions(content_source_key, :current => 2, :size => 20)
 ```
 
 #### Retrieve a User's permissions
