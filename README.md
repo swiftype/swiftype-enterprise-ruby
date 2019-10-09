@@ -124,7 +124,7 @@ content_source_key = '' # your content source key
 user = 'enterprise_search'
 permissions = ['permission1']
 
-client.add_user_permissions(content_source_key, user, permissions)
+client.add_user_permissions(content_source_key, user, :permissions => permissions)
 ```
 
 #### Update a User's permissions
@@ -133,7 +133,7 @@ content_source_key = '' # your content source key
 user = 'enterprise_search'
 permissions = ['permission2']
 
-client.update_user_permissions(content_source_key, user, permissions)
+client.update_user_permissions(content_source_key, user, :permissions => permissions)
 ```
 
 #### Remove permissions from a User
@@ -142,7 +142,7 @@ content_source_key = '' # your content source key
 user = 'enterprise_search'
 permissions = ['permission2']
 
-client.remove_user_permissions(content_source_key, user, permissions)
+client.remove_user_permissions(content_source_key, user, :permissions => permissions)
 ```
 
 ## Running tests

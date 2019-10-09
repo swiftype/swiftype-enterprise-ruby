@@ -12,16 +12,16 @@ module Elastic
           get("ent/sources/#{content_source_key}/permissions/#{user}")
         end
 
-        def update_user_permissions(content_source_key, user, permissions)
-          post("ent/sources/#{content_source_key}/permissions/#{user}", :permissions => permissions)
+        def update_user_permissions(content_source_key, user, options)
+          post("ent/sources/#{content_source_key}/permissions/#{user}", options)
         end
 
-        def add_user_permissions(content_source_key, user, permissions)
-          post("ent/sources/#{content_source_key}/permissions/#{user}/add", :permissions => permissions)
+        def add_user_permissions(content_source_key, user, options)
+          post("ent/sources/#{content_source_key}/permissions/#{user}/add", options)
         end
 
-        def remove_user_permissions(content_source_key, user, permissions)
-          post("ent/sources/#{content_source_key}/permissions/#{user}/remove", :permissions => permissions)
+        def remove_user_permissions(content_source_key, user, options)
+          post("ent/sources/#{content_source_key}/permissions/#{user}/remove", options)
         end
 
       end

@@ -33,7 +33,7 @@ describe Elastic::EnterpriseSearch::Client::Permissions do
 
     it 'adds permissions to a user' do
       VCR.use_cassette(:add_user_permissions) do
-        response = client.add_user_permissions(content_source_key, user, permissions)
+        response = client.add_user_permissions(content_source_key, user, :permissions => permissions)
         expect(response['permissions']).to eq(['permission1'])
       end
     end
@@ -55,7 +55,7 @@ describe Elastic::EnterpriseSearch::Client::Permissions do
 
     it 'updates permissions for a user' do
       VCR.use_cassette(:update_user_permissions) do
-        response = client.update_user_permissions(content_source_key, user, permissions)
+        response = client.update_user_permissions(content_source_key, user, :permissions => permissions)
         expect(response['permissions']).to eq(['permission2'])
       end
     end
@@ -66,7 +66,7 @@ describe Elastic::EnterpriseSearch::Client::Permissions do
 
     it 'removes permissions from a user' do
       VCR.use_cassette(:remove_user_permissions) do
-        response = client.remove_user_permissions(content_source_key, user, permissions)
+        response = client.remove_user_permissions(content_source_key, user, :permissions => permissions)
         expect(response['permissions']).to eq([])
       end
     end
