@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3002/api/v1/ent/sources/5d96387b75444bf49532c24a/permissions?page%5Bcurrent%5D=1&page%5Bsize%5D=20
+    uri: http://localhost:3002/api/v1/ent/sources/5d96387b75444bf49532c24a/permissions?page%5Bcurrent%5D=1&page%5Bsize%5D=25
     body:
       encoding: US-ASCII
       string: ''
@@ -49,7 +49,7 @@ http_interactions:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"meta":{"page":{"current":1,"total_pages":1,"total_results":2,"size":20}},"results":[{"user":"elastic","permissions":[]},{"user":"enterprise_search","permissions":[]}]}'
-    http_version: 
+      string: '{"meta":{"page":{"current":1,"total_pages":1,"total_results":2,"size":25}},"results":[{"user":"elastic","permissions":[]},{"user":"enterprise_search","permissions":[]}]}'
+    http_version:
   recorded_at: Tue, 08 Oct 2019 17:56:03 GMT
 recorded_with: VCR 3.0.3
