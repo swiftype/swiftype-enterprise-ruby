@@ -4,7 +4,7 @@ module Elastic
     class Client
       module Permissions
 
-        def list_all_permissions(content_source_key, current: 1, size: 20)
+        def list_all_permissions(content_source_key, current: 1, size: 25)
           get("ent/sources/#{content_source_key}/permissions", "page[current]" => current, "page[size]" => size )
         end
 
