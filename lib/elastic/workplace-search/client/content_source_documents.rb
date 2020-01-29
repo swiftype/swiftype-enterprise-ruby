@@ -28,13 +28,13 @@ module Elastic
         # @raise [Timeout::Error] when timeout expires waiting for results
         def destroy_documents(content_source_key, document_ids)
           document_ids = Array(document_ids)
-          post("ent/sources/#{content_source_key}/documents/bulk_destroy.json", document_ids)
+          post("sources/#{content_source_key}/documents/bulk_destroy.json", document_ids)
         end
 
         private
 
         def async_create_or_update_documents(content_source_key, documents)
-          post("ent/sources/#{content_source_key}/documents/bulk_create.json", documents)
+          post("sources/#{content_source_key}/documents/bulk_create.json", documents)
         end
 
         def normalize_document(document)

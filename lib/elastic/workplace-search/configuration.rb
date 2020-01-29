@@ -4,7 +4,7 @@ require 'elastic/enterprise-search/version'
 module Elastic
   module EnterpriseSearch
     module Configuration
-      DEFAULT_ENDPOINT = "http://localhost:3002/api/v1/"
+      DEFAULT_ENDPOINT = "http://localhost:3002/api/ws/v1/"
 
       VALID_OPTIONS_KEYS = [
         :access_token,

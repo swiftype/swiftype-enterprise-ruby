@@ -35,7 +35,7 @@ client = Elastic::EnterpriseSearch::Client.new
 
 ```ruby
 client = Elastic::EnterpriseSearch::Client.new
-Elastic::EnterpriseSearch.endpoint = 'https://your-server.example.com/api/v1'
+Elastic::EnterpriseSearch.endpoint = 'https://your-server.example.com/api/ws/v1'
 ```
 
 ### Specifying an HTTP Proxy
@@ -148,7 +148,7 @@ client.remove_user_permissions(content_source_key, user, :permissions => permiss
 Run tests via rspec:
 
 ```bash
-$ ENDPOINT=http://localhost:3002/api/v1 bundle exec rspec
+$ ENDPOINT=http://localhost:3002/api/ws/v1 bundle exec rspec
 ```
 
 ## FAQ 🔮

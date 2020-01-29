@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3002/api/v1/ent/sources/59542d332139de0acacc7dd4/documents/bulk_create.json
+    uri: http://localhost:3002/api/ws/v1/sources/59542d332139de0acacc7dd4/documents/bulk_create.json
     body:
       encoding: UTF-8
       string: '[{"id":"INscMGmhmX4","url":"http://www.youtube.com/watch?v=v1uyQZNg2vE","title":"The

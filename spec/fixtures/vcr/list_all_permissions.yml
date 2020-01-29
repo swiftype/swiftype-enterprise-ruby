@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3002/api/v1/ent/sources/5d96387b75444bf49532c24a/permissions?page%5Bcurrent%5D=1&page%5Bsize%5D=25
+    uri: http://localhost:3002/api/ws/v1/sources/5d96387b75444bf49532c24a/permissions?page%5Bcurrent%5D=1&page%5Bsize%5D=25
     body:
       encoding: US-ASCII
       string: ''

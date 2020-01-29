@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3002/api/v1/ent/sources/5d96387b75444bf49532c24a/permissions/enterprise_search/remove
+    uri: http://localhost:3002/api/ws/v1/sources/5d96387b75444bf49532c24a/permissions/enterprise_search/remove
     body:
       encoding: UTF-8
       string: '{"permissions":["permission2"]}'
