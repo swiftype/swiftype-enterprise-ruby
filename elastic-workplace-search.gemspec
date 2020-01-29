@@ -1,14 +1,14 @@
 $:.push File.expand_path("../lib", __FILE__)
-require "elastic/enterprise-search/version"
+require "elastic/workplace-search/version"
 
 Gem::Specification.new do |s|
-  s.name        = "elastic-enterprise-search"
-  s.version     = Elastic::EnterpriseSearch::VERSION
+  s.name        = "elastic-workplace-search"
+  s.version     = Elastic::WorkplaceSearch::VERSION
   s.authors     = ["Quin Hoxie"]
   s.email       = ["support@elastic.co"]
-  s.homepage    = "https://github.com/elastic/enterprise-search-ruby"
-  s.summary     = %q{Official gem for accessing the Elastic Enterprise Search API}
-  s.description = %q{API client for accessing the Elastic Enterprise Search API with no dependencies.}
+  s.homepage    = "https://github.com/elastic/workplace-search-ruby"
+  s.summary     = %q{Official gem for accessing the Elastic Workplace Search API}
+  s.description = %q{API client for accessing the Elastic Workplace Search API with no dependencies.}
   s.licenses    = ['Apache-2.0']
 
   s.files         = `git ls-files`.split("\n")

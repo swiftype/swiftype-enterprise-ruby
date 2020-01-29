@@ -1,6 +1,5 @@
-# Document Permissions API - /documentation/enterprise-search/api/document-permissions
 module Elastic
-  module EnterpriseSearch
+  module WorkplaceSearch
     class Client
       module Permissions
 

@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Elastic::EnterpriseSearch::Client::Permissions do
-  let(:client) { Elastic::EnterpriseSearch::Client.new }
+describe Elastic::WorkplaceSearch::Client::Permissions do
+  let(:client) { Elastic::WorkplaceSearch::Client.new }
 
   before :each do
-    Elastic::EnterpriseSearch.access_token = 'xyT3mm3ecPsPuYxd_6fX'
+    Elastic::WorkplaceSearch.access_token = 'xyT3mm3ecPsPuYxd_6fX'
   end
 
   let(:content_source_key) { '5d96387b75444bf49532c24a' }

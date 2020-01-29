@@ -16,7 +16,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-Swiftype-Client:
-      - elastic-enterprise-search-ruby
+      - elastic-workplace-search-ruby
       X-Swiftype-Client-Version:
       - 0.3.0
       Authorization:

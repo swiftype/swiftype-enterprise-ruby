@@ -1,26 +1,26 @@
 require 'set'
-require 'elastic/enterprise-search/configuration'
-require 'elastic/enterprise-search/request'
-require 'elastic/enterprise-search/utils'
+require 'elastic/workplace-search/configuration'
+require 'elastic/workplace-search/request'
+require 'elastic/workplace-search/utils'
 
 module Elastic
-  module EnterpriseSearch
-    # API client for the {Elastic Enterprise Search API}[https://swiftype.com/enterprise-search].
+  module WorkplaceSearch
+    # API client for the {Elastic Workplace Search API}[https://www.elastic.co/workplace-search].
     class Client
-      autoload :ContentSourceDocuments, 'elastic/enterprise-search/client/content_source_documents.rb'
-      autoload :Permissions, 'elastic/enterprise-search/client/permissions.rb'
+      autoload :ContentSourceDocuments, 'elastic/workplace-search/client/content_source_documents.rb'
+      autoload :Permissions, 'elastic/workplace-search/client/permissions.rb'
 
       DEFAULT_TIMEOUT = 15
 
-      include Elastic::EnterpriseSearch::Request
+      include Elastic::WorkplaceSearch::Request
 
       def self.configure(&block)
-        Elastic::EnterpriseSearch.configure &block
+        Elastic::WorkplaceSearch.configure &block
       end
 
-      # Create a new Elastic::EnterpriseSearch::Client client
+      # Create a new Elastic::WorkplaceSearch::Client client
       #
-      # @param options [Hash] a hash of configuration options that will override what is set on the Elastic::EnterpriseSearch class.
+      # @param options [Hash] a hash of configuration options that will override what is set on the Elastic::WorkplaceSearch class.
       # @option options [String] :access_token an Access Token to use for this client
       # @option options [Numeric] :overall_timeout overall timeout for requests in seconds (default: 15s)
       # @option options [Numeric] :open_timeout the number of seconds Net::HTTP (default: 15s)
@@ -31,7 +31,7 @@ module Elastic
       end
 
       def access_token
-        @options[:access_token] || Elastic::EnterpriseSearch.access_token
+        @options[:access_token] || Elastic::WorkplaceSearch.access_token
       end
 
       def open_timeout
@@ -46,8 +46,8 @@ module Elastic
         (@options[:overall_timeout] || DEFAULT_TIMEOUT).to_f
       end
 
-      include Elastic::EnterpriseSearch::Client::ContentSourceDocuments
-      include Elastic::EnterpriseSearch::Client::Permissions
+      include Elastic::WorkplaceSearch::Client::ContentSourceDocuments
+      include Elastic::WorkplaceSearch::Client::Permissions
     end
   end
 end

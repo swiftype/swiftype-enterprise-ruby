@@ -1,6 +1,5 @@
-# Content Source API - https://swiftype.com/documentation/enterprise-search/api/custom-sources
 module Elastic
-  module EnterpriseSearch
+  module WorkplaceSearch
     class Client
       module ContentSourceDocuments
 
@@ -11,7 +10,7 @@ module Elastic
         #
         # @return [Array<Hash>] an Array of Document indexing Results
         #
-        # @raise [Elastic::EnterpriseSearch::InvalidDocument] when a single document is missing required fields or contains unsupported fields
+        # @raise [Elastic::WorkplaceSearch::InvalidDocument] when a single document is missing required fields or contains unsupported fields
         # @raise [Timeout::Error] when timeout expires waiting for results
         def index_documents(content_source_key, documents)
           documents = Array(documents).map! { |document| normalize_document(document) }

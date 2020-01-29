@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe Elastic::EnterpriseSearch::Client::ContentSourceDocuments do
-  let(:engine_slug) { 'enterprise-search-api-example' }
-  let(:client) { Elastic::EnterpriseSearch::Client.new }
+describe Elastic::WorkplaceSearch::Client::ContentSourceDocuments do
+  let(:engine_slug) { 'workplace-search-api-example' }
+  let(:client) { Elastic::WorkplaceSearch::Client.new }
 
   before :each do
-    Elastic::EnterpriseSearch.access_token = 'cGUN-vBokevBhhzyA669'
+    Elastic::WorkplaceSearch.access_token = 'cGUN-vBokevBhhzyA669'
   end
 
   def check_receipt_response_format(response, options = {})

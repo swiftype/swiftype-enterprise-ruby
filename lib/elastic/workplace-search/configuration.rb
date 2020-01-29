@@ -1,8 +1,8 @@
 require 'uri'
-require 'elastic/enterprise-search/version'
+require 'elastic/workplace-search/version'
 
 module Elastic
-  module EnterpriseSearch
+  module WorkplaceSearch
     module Configuration
       DEFAULT_ENDPOINT = "http://localhost:3002/api/ws/v1/"
 
@@ -26,7 +26,7 @@ module Elastic
         self
       end
 
-      # Yields the Elastic::EnterpriseSearch::Configuration module which can be used to set configuration options.
+      # Yields the Elastic::WorkplaceSearch::Configuration module which can be used to set configuration options.
       #
       # @return self
       def configure

@@ -1,5 +1,5 @@
 module Elastic
-  module EnterpriseSearch
+  module WorkplaceSearch
     class ClientException < StandardError; end
     class NonExistentRecord < ClientException; end
     class InvalidCredentials < ClientException; end

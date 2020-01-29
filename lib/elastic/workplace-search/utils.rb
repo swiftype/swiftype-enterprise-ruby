@@ -1,5 +1,5 @@
 module Elastic
-  module EnterpriseSearch
+  module WorkplaceSearch
     module Utils
       extend self
 

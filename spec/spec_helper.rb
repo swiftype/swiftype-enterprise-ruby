@@ -3,7 +3,7 @@ require 'rspec'
 require 'webmock'
 require 'vcr'
 require 'awesome_print'
-require 'elastic/enterprise-search'
+require 'elastic/workplace-search'
 
 
 RSpec.configure do |config|
@@ -19,10 +19,10 @@ RSpec.configure do |config|
   end
 
   config.before :each do
-    Elastic::EnterpriseSearch.endpoint = ENV["ENDPOINT"]
+    Elastic::WorkplaceSearch.endpoint = ENV["ENDPOINT"]
   end
 
   config.after :each do
-    Elastic::EnterpriseSearch.reset
+    Elastic::WorkplaceSearch.reset
   end
 end

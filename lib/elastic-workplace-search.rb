@@ -1,1 +1,1 @@
-require 'elastic/enterprise-search'
+require 'elastic/workplace-search'

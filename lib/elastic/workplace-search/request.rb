@@ -1,12 +1,12 @@
 require 'net/https'
 require 'json'
-require 'elastic/enterprise-search/exceptions'
+require 'elastic/workplace-search/exceptions'
 require 'openssl'
 
 module Elastic
-  module EnterpriseSearch
-    CLIENT_NAME = 'elastic-enterprise-search-ruby'
-    CLIENT_VERSION = Elastic::EnterpriseSearch::VERSION
+  module WorkplaceSearch
+    CLIENT_NAME = 'elastic-workplace-search-ruby'
+    CLIENT_VERSION = Elastic::WorkplaceSearch::VERSION
 
     module Request
       def get(path, params={})
@@ -30,7 +30,7 @@ module Elastic
       # @raise [Timeout::Error] when the timeout expires
       def request(method, path, params = {})
         Timeout.timeout(overall_timeout) do
-          uri = URI.parse("#{Elastic::EnterpriseSearch.endpoint}#{path}")
+          uri = URI.parse("#{Elastic::WorkplaceSearch.endpoint}#{path}")
 
           request = build_request(method, uri, params)
 
@@ -66,15 +66,15 @@ module Elastic
         when Net::HTTPSuccess
           response
         when Net::HTTPUnauthorized
-          raise Elastic::EnterpriseSearch::InvalidCredentials
+          raise Elastic::WorkplaceSearch::InvalidCredentials
         when Net::HTTPNotFound
-          raise Elastic::EnterpriseSearch::NonExistentRecord
+          raise Elastic::WorkplaceSearch::NonExistentRecord
         when Net::HTTPBadRequest
-          raise Elastic::EnterpriseSearch::BadRequest, "#{response.code} #{response.body}"
+          raise Elastic::WorkplaceSearch::BadRequest, "#{response.code} #{response.body}"
         when Net::HTTPForbidden
-          raise Elastic::EnterpriseSearch::Forbidden
+          raise Elastic::WorkplaceSearch::Forbidden
         else
-          raise Elastic::EnterpriseSearch::UnexpectedHTTPException, "#{response.code} #{response.body}"
+          raise Elastic::WorkplaceSearch::UnexpectedHTTPException, "#{response.code} #{response.body}"
         end
       end
 
@@ -99,7 +99,7 @@ module Elastic
           req.body = JSON.generate(params) unless params.length == 0
         end
 
-        req['User-Agent'] = Elastic::EnterpriseSearch.user_agent if Elastic::EnterpriseSearch.user_agent
+        req['User-Agent'] = Elastic::WorkplaceSearch.user_agent if Elastic::WorkplaceSearch.user_agent
         req['Content-Type'] = 'application/json'
         req['X-Swiftype-Client'] = CLIENT_NAME
         req['X-Swiftype-Client-Version'] = CLIENT_VERSION

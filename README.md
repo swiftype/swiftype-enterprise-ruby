@@ -1,6 +1,6 @@
- <p align="center"><a href="https://circleci.com/gh/elastic/enterprise-search-ruby"><img src="https://circleci.com/gh/elastic/enterprise-search-ruby.svg?style=svg" alt="CircleCI build"></a></p>
+ <p align="center"><a href="https://circleci.com/gh/elastic/workplace-search-ruby"><img src="https://circleci.com/gh/elastic/workplace-search-ruby.svg?style=svg" alt="CircleCI build"></a></p>
 
-> A first-party Ruby client for [Elastic Enterprise Search](https://www.elastic.co/solutions/enterprise-search).
+> A first-party Ruby client for [Elastic Workplace Search](https://www.elastic.co/workplace-search).
 
 ## Contents
 
@@ -17,31 +17,31 @@
 To install the gem, execute:
 
 ```bash
-gem install elastic-enterprise-search
+gem install elastic-workplace-search
 ```
 
-Or place `gem 'elastic-enterprise-search', '~> 0.3.0` in your `Gemfile` and run `bundle install`.
+Or place `gem 'elastic-workplace-search', '~> 0.3.0` in your `Gemfile` and run `bundle install`.
 
 ## Usage
 
-Create a new instance of the Enterprise Search Client with your access token:
+Create a new instance of the Elastic Workplace Search client with your access token:
 
 ```ruby
-Elastic::EnterpriseSearch.access_token = '' # your access token
-client = Elastic::EnterpriseSearch::Client.new
+Elastic::WorkplaceSearch.access_token = '' # your access token
+client = Elastic::WorkplaceSearch::Client.new
 ```
 
 ### Change API endpoint
 
 ```ruby
-client = Elastic::EnterpriseSearch::Client.new
-Elastic::EnterpriseSearch.endpoint = 'https://your-server.example.com/api/ws/v1'
+client = Elastic::WorkplaceSearch::Client.new
+Elastic::WorkplaceSearch.endpoint = 'https://your-server.example.com/api/ws/v1'
 ```
 
 ### Specifying an HTTP Proxy
 
 ```ruby
-client = Elastic::EnterpriseSearch::Client.new(:proxy => 'http://localhost:8888')
+client = Elastic::WorkplaceSearch::Client.new(:proxy => 'http://localhost:8888')
 ```
 
 ### Documents
@@ -70,7 +70,7 @@ documents = [
 begin
   document_receipts = client.index_documents(content_source_key, documents)
   # handle results
-rescue Elastic::EnterpriseSearch::ClientException => e
+rescue Elastic::WorkplaceSearch::ClientException => e
   # handle error
 end
 ```
@@ -84,7 +84,7 @@ document_ids = ['INscMGmhmX4', 'JNDFojsd02']
 begin
   destroy_document_results = client.destroy_documents(content_source_key, document_ids)
   # handle destroy document results
-rescue Elastic::EnterpriseSearch::ClientException => e
+rescue Elastic::WorkplaceSearch::ClientException => e
   # handle error
 end
 ```
@@ -155,17 +155,17 @@ $ ENDPOINT=http://localhost:3002/api/ws/v1 bundle exec rspec
 
 ### Where do I report issues with the client?
 
-If something is not working as expected, please open an [issue](https://github.com/elastic/enterprise-search-ruby/issues/new).
+If something is not working as expected, please open an [issue](https://github.com/elastic/workplace-search-ruby/issues/new).
 
 ## Contribute 🚀
 
 We welcome contributors to the project. Before you begin, a couple notes...
 
-+ Before opening a pull request, please create an issue to [discuss the scope of your proposal](https://github.com/elastic/enterprise-search-ruby/issues).
++ Before opening a pull request, please create an issue to [discuss the scope of your proposal](https://github.com/elastic/workplace-search-ruby/issues).
 + Please write simple code and concise documentation, when appropriate.
 
 ## License 📗
 
-[Apache 2.0](https://github.com/elastic/enterprise-search-ruby/blob/master/LICENSE.txt) © [Elastic](https://github.com/elastic)
+[Apache 2.0](https://github.com/elastic/workplace-search-ruby/blob/master/LICENSE.txt) © [Elastic](https://github.com/elastic)
 
-Thank you to all the [contributors](https://github.com/elastic/enterprise-search-ruby/graphs/contributors)!
+Thank you to all the [contributors](https://github.com/elastic/workplace-search-ruby/graphs/contributors)!

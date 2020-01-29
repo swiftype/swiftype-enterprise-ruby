@@ -1,7 +1,7 @@
-require 'elastic/enterprise-search/client'
+require 'elastic/workplace-search/client'
 
 module Elastic
-  module EnterpriseSearch
-    extend Elastic::EnterpriseSearch::Configuration
+  module WorkplaceSearch
+    extend Elastic::WorkplaceSearch::Configuration
   end
 end
