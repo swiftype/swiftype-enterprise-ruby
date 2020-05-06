@@ -24,6 +24,8 @@ Or place `gem 'elastic-workplace-search', '~> 0.4.1` in your `Gemfile` and run `
 
 ## Usage
 
+In your Elastic Workplace Search dashboard navigate to Sources/Add a Shared Content Source/Custom API Source to create a new source. Name your source (e.g. `Workplace Search Ruby Client`) and once it's created you'll get an `access token` and a `key`. You'll need these in the following steps.
+
 Create a new instance of the Elastic Workplace Search client with your access token:
 
 ```ruby
