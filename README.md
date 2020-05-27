@@ -1,4 +1,4 @@
- <p align="center"><a href="https://circleci.com/gh/elastic/workplace-search-ruby"><img src="https://circleci.com/gh/elastic/workplace-search-ruby.svg?style=svg" alt="CircleCI build"></a></p>
+![](https://github.com/elastic/workplace-search-ruby/workflows/master/badge.svg)
 
 > A first-party Ruby client for [Elastic Workplace Search](https://www.elastic.co/workplace-search).
 
