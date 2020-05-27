@@ -1,4 +1,5 @@
-![](https://github.com/elastic/workplace-search-ruby/workflows/master/badge.svg)
+[![Master build](https://github.com/elastic/workplace-search-ruby/workflows/master/badge.svg)](https://github.com/elastic/workplace-search-ruby/actions?query=workflow%3Amaster)
+
 
 > A first-party Ruby client for [Elastic Workplace Search](https://www.elastic.co/workplace-search).
 
