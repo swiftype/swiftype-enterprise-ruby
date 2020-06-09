@@ -1,0 +1,10 @@
+Metrics/LineLength:
+  Max: 120
+Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/WordArray:
+  EnforcedStyle: brackets
+Metrics/BlockLength:
+  Enabled: false
+AllCops:
+  DisplayCopNames: true

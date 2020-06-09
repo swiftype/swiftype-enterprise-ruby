@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'set'
 require 'elastic/workplace-search/configuration'
 require 'elastic/workplace-search/request'
@@ -15,12 +17,13 @@ module Elastic
       include Elastic::WorkplaceSearch::Request
 
       def self.configure(&block)
-        Elastic::WorkplaceSearch.configure &block
+        Elastic::WorkplaceSearch.configure(&block)
       end
 
       # Create a new Elastic::WorkplaceSearch::Client client
       #
-      # @param options [Hash] a hash of configuration options that will override what is set on the Elastic::WorkplaceSearch class.
+      # @param options [Hash] a hash of configuration options that will override what is set on the
+      #   Elastic::WorkplaceSearch class.
       # @option options [String] :access_token an Access Token to use for this client
       # @option options [Numeric] :overall_timeout overall timeout for requests in seconds (default: 15s)
       # @option options [Numeric] :open_timeout the number of seconds Net::HTTP (default: 15s)

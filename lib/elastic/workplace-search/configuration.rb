@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 require 'uri'
 require 'elastic/workplace-search/version'
 
 module Elastic
   module WorkplaceSearch
+    # Configuratin module
     module Configuration
-      DEFAULT_ENDPOINT = "http://localhost:3002/api/ws/v1/"
+      DEFAULT_ENDPOINT = 'http://localhost:3002/api/ws/v1/'
 
       VALID_OPTIONS_KEYS = [
         :access_token,
@@ -12,7 +15,7 @@ module Elastic
         :endpoint
       ].freeze
 
-      attr_accessor *VALID_OPTIONS_KEYS
+      attr_accessor(*VALID_OPTIONS_KEYS)
 
       def self.extended(base)
         base.reset
@@ -37,17 +40,17 @@ module Elastic
       # Return a hash of the configured options.
       def options
         options = {}
-        VALID_OPTIONS_KEYS.each{ |k| options[k] = send(k) }
+        VALID_OPTIONS_KEYS.each { |k| options[k] = send(k) }
         options
       end
 
       # setter for endpoint that ensures it always ends in '/'
       def endpoint=(endpoint)
-        if endpoint.end_with?('/')
-          @endpoint = endpoint
-        else
-          @endpoint = "#{endpoint}/"
-        end
+        @endpoint = if endpoint.end_with?('/')
+                      endpoint
+                    else
+                      "#{endpoint}/"
+                    end
       end
     end
   end

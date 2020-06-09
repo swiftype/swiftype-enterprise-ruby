@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/https'
 require 'json'
 require 'elastic/workplace-search/exceptions'
@@ -8,20 +10,21 @@ module Elastic
     CLIENT_NAME = 'elastic-workplace-search-ruby'
     CLIENT_VERSION = Elastic::WorkplaceSearch::VERSION
 
+    # Module included in Elastic::WorkplaceSearch::Client for http requests.
     module Request
-      def get(path, params={})
+      def get(path, params = {})
         request(:get, path, params)
       end
 
-      def post(path, params={})
+      def post(path, params = {})
         request(:post, path, params)
       end
 
-      def put(path, params={})
+      def put(path, params = {})
         request(:put, path, params)
       end
 
-      def delete(path, params={})
+      def delete(path, params = {})
         request(:delete, path, params)
       end
 

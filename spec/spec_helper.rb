@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'bundler/setup'
 require 'rspec'
 require 'webmock'
 require 'vcr'
 require 'awesome_print'
-require 'elastic/workplace-search'
+require 'elastic/workplace_search'
 
 RSpec.configure do |config|
   # Run specs in random order to surface order dependencies. If you find an

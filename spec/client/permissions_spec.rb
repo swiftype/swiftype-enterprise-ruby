@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Elastic::WorkplaceSearch::Client::Permissions do
@@ -20,7 +22,7 @@ describe Elastic::WorkplaceSearch::Client::Permissions do
 
     it 'lists all permissions with paging' do
       VCR.use_cassette(:list_all_permissions_with_paging) do
-        response = client.list_all_permissions(content_source_key, :current => 2, :size => 5)
+        response = client.list_all_permissions(content_source_key, current: 2, size: 5)
         expect(response['meta']['page']['current']).to eq(2)
         expect(response['meta']['page']['size']).to eq(5)
         expect(response['results'].size).to eq(0)
@@ -33,7 +35,7 @@ describe Elastic::WorkplaceSearch::Client::Permissions do
 
     it 'adds permissions to a user' do
       VCR.use_cassette(:add_user_permissions) do
-        response = client.add_user_permissions(content_source_key, user, :permissions => permissions)
+        response = client.add_user_permissions(content_source_key, user, permissions: permissions)
         expect(response['permissions']).to eq(['permission1'])
       end
     end
@@ -55,7 +57,7 @@ describe Elastic::WorkplaceSearch::Client::Permissions do
 
     it 'updates permissions for a user' do
       VCR.use_cassette(:update_user_permissions) do
-        response = client.update_user_permissions(content_source_key, user, :permissions => permissions)
+        response = client.update_user_permissions(content_source_key, user, permissions: permissions)
         expect(response['permissions']).to eq(['permission2'])
       end
     end
@@ -66,10 +68,9 @@ describe Elastic::WorkplaceSearch::Client::Permissions do
 
     it 'removes permissions from a user' do
       VCR.use_cassette(:remove_user_permissions) do
-        response = client.remove_user_permissions(content_source_key, user, :permissions => permissions)
+        response = client.remove_user_permissions(content_source_key, user, permissions: permissions)
         expect(response['permissions']).to eq([])
       end
     end
   end
-
 end

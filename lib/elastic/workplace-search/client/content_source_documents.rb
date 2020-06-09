@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 module Elastic
   module WorkplaceSearch
     class Client
+      # Module included in Elastic::WorkplaceSearch::Client for handling the Documents API
+      #
+      # @see https://www.elastic.co/guide/en/workplace-search/current/workplace-search-custom-sources-api.html
       module ContentSourceDocuments
-
         # Index a batch of documents.
         #
         # @param [String] content_source_key the unique Content Source key as found in your Content Sources dashboard
@@ -10,7 +14,8 @@ module Elastic
         #
         # @return [Array<Hash>] an Array of Document indexing Results
         #
-        # @raise [Elastic::WorkplaceSearch::InvalidDocument] when a single document is missing required fields or contains unsupported fields
+        # @raise [Elastic::WorkplaceSearch::InvalidDocument] when a single document is missing required fields or
+        #   contains unsupported fields
         # @raise [Timeout::Error] when timeout expires waiting for results
         def index_documents(content_source_key, documents)
           documents = Array(documents).map! { |document| normalize_document(document) }

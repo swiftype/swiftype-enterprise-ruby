@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Elastic
   module WorkplaceSearch
     module Utils
-      extend self
+      module_function
 
       def stringify_keys(hash)
         output = {}

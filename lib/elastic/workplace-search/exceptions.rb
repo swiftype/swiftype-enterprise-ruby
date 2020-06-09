@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elastic
   module WorkplaceSearch
     class ClientException < StandardError; end
