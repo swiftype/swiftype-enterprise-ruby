@@ -2,6 +2,7 @@
 
 module Elastic
   module WorkplaceSearch
+    # Util functions
     module Utils
       module_function
 

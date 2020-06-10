@@ -10,6 +10,7 @@ describe Elastic::WorkplaceSearch::Client::ContentSourceDocuments do
     Elastic::WorkplaceSearch.access_token = 'cGUN-vBokevBhhzyA669'
   end
 
+  # rubocop:disable Metrics/AbcSize
   def check_receipt_response_format(response, options = {})
     expect(response.keys).to match_array(['document_receipts', 'batch_link'])
     expect(response['document_receipts']).to be_a_kind_of(Array)
@@ -18,6 +19,7 @@ describe Elastic::WorkplaceSearch::Client::ContentSourceDocuments do
     expect(response['document_receipts'].first['status']).to eq(options[:status]) if options[:status]
     expect(response['document_receipts'].first['errors']).to eq(options[:errors]) if options[:errors]
   end
+  # rubocop:enable Metrics/AbcSize
 
   let(:content_source_key) { '59542d332139de0acacc7dd4' }
   let(:documents) do
