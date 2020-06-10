@@ -61,4 +61,35 @@ describe Elastic::WorkplaceSearch::Client do
       end
     end
   end
+
+  context 'with a proxy' do
+    # TODO: webmok doesn't seem to support checking if request was sent through
+    # a proxy yet.
+    let(:proxy) { 'http://localhost:8888' }
+    let(:client) { Elastic::WorkplaceSearch::Client.new(proxy: proxy) }
+
+    it 'sends the request correctly' do
+      stub_request(:get, "#{host}/test")
+        .with(query: { 'params' => 'test' }, headers: headers)
+        .to_return(stub_response)
+
+      expect(client.get('test', { 'params' => 'test' })).to eq(response)
+    end
+  end
+
+  context 'with ssl' do
+    let(:host) { 'https://localhost:3002/api/ws/v1' }
+
+    before do
+      Elastic::WorkplaceSearch.endpoint = host
+    end
+
+    it 'sends the request correctly' do
+      stub_request(:get, "#{host}/test")
+        .with(query: { 'params' => 'test' }, headers: headers)
+        .to_return(stub_response)
+
+      expect(client.get('test', { 'params' => 'test' })).to eq(response)
+    end
+  end
 end
