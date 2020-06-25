@@ -7,13 +7,20 @@ describe Elastic::WorkplaceSearch::Client do
   let(:response) { { 'status' => 'ok' } }
   let(:stub_response) { { body: response.to_json } }
   let(:host) { 'http://localhost:3002/api/ws/v1' }
-  let(:access_token) { 'cGUN-vBokevBhhzyA669' }
+  let(:access_token) { 'access_token' }
+  let(:user_agent) do
+    [
+      "#{Elastic::WorkplaceSearch::CLIENT_NAME}/#{Elastic::WorkplaceSearch::VERSION} ",
+      "(RUBY_VERSION: #{RUBY_VERSION}; ",
+      "#{RbConfig::CONFIG['host_os'].split('_').first[/[a-z]+/i].downcase} ",
+      "#{RbConfig::CONFIG['target_cpu']})"
+    ].join
+  end
+
   let(:headers) do
     {
-      'User-Agent' => 'Ruby',
+      'User-Agent' => user_agent,
       'Content-Type' => 'application/json',
-      'X-Swiftype-Client' => Elastic::WorkplaceSearch::CLIENT_NAME,
-      'X-Swiftype-Client-Version' => Elastic::WorkplaceSearch::CLIENT_VERSION,
       'Authorization' => "Bearer #{access_token}"
     }
   end

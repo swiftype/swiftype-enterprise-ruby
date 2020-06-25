@@ -11,7 +11,6 @@ module Elastic
 
       VALID_OPTIONS_KEYS = [
         :access_token,
-        :user_agent,
         :endpoint
       ].freeze
 
@@ -25,7 +24,6 @@ module Elastic
       def reset
         self.access_token = nil
         self.endpoint = DEFAULT_ENDPOINT
-        self.user_agent = nil
         self
       end
 

@@ -105,12 +105,20 @@ module Elastic
       end
 
       def setup_headers(req)
-        req['User-Agent'] = Elastic::WorkplaceSearch.user_agent if Elastic::WorkplaceSearch.user_agent
+        req['User-Agent'] = request_user_agent
         req['Content-Type'] = 'application/json'
-        req['X-Swiftype-Client'] = CLIENT_NAME
-        req['X-Swiftype-Client-Version'] = CLIENT_VERSION
         req['Authorization'] = "Bearer #{access_token}"
         req
+      end
+
+      def request_user_agent
+        ua = "#{CLIENT_NAME}/#{CLIENT_VERSION}"
+        meta = ["RUBY_VERSION: #{RUBY_VERSION}"]
+        if RbConfig::CONFIG && RbConfig::CONFIG['host_os']
+          meta << "#{RbConfig::CONFIG['host_os'].split('_').first[/[a-z]+/i].downcase} " \
+                  "#{RbConfig::CONFIG['target_cpu']}"
+        end
+        "#{ua} (#{meta.join('; ')})"
       end
 
       def setup_proxy(uri)
